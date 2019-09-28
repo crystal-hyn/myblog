@@ -1,0 +1,220 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>About</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<script src="js/jquery-1.11.0.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+				});				
+			
+			},
+			
+			hoverEffect: function () {
+			
+				// Simple parallax effect
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+					}		
+				);				
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+	</script>
+	<script type="text/javascript" src="js/easing.js"></script>
+					<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+</script>
+</head>
+<body>
+	<!--- Header Starts Here ---->
+	<div class="header" id="home">
+		<div class="container">
+			
+			<!--- banner Slider starts Here --->
+	  			<script src="js/responsiveslides.min.js"></script>
+					 <script>
+					    // You can also use "$(window).load(function() {"
+					    $(function () {
+					      // Slideshow 4
+					      $("#slider4").responsiveSlides({
+					        auto: true,
+					        pager: true,
+					        nav: true,
+					        speed: 500,
+					        namespace: "callbacks",
+					        before: function () {
+					          $('.events').append("<li>before event fired.</li>");
+					        },
+					        after: function () {
+					          $('.events').append("<li>after event fired.</li>");
+					        }
+					      });
+					
+					    });
+					  </script>
+			<!----//End-slider-script---->
+			<!-- Slideshow 4 -->
+			    <div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider4">
+			        <li>
+			        	<div class="slide-content">
+							<h2>Welcome!</h2>
+						</div>
+					 </li>
+					 <li>
+			        	<div class="slide-content">
+							<h2>I am Yani Han!</h2>
+						</div>
+					 </li>
+					 <li>
+			        	<div class="slide-content">
+							<h2>Let's study together!</h2>
+						</div>
+					 </li>
+			      </ul>
+			    </div>
+		</div>
+	</div>
+	<!--- Header Ends Here ---->
+	<!-- Navigation Starts Here ---->
+	<!-- top-nav -->
+		
+		<div class="top-nav">
+			<nav>
+				<span class="menu"></span>
+				<ul>
+					<li><a href="#about" class="scroll">About me</a></li>
+					<li><a href="#work" class="scroll">Work</a></li>
+
+					<li><a href="#service" class="scroll">Service</a></li>
+                    <li><a href="#publications" class="scroll">Publications</a></li>
+					<li><a href="#contact" class="scroll">Contact</a></li>
+					<div class="clearfix"> </div>
+				</ul>
+			</nav>
+		</div>
+		<script>
+					$( "span.menu" ).click(function() {
+					  $( ".top-nav ul" ).slideToggle( "slow", function() {
+					    // Animation complete.
+					  });
+					});
+				</script>
+
+		<script src="js/myscript.js"> </script>
+		<!-- top-nav -->
+	<!--- Navigarion Ends Here --->
+
+	<!--- About me Starts Here ---->
+	<div class="about" id="about">
+		<div class="container">
+			<h3 class="top-title">About me</h3>
+			<p>
+               &emsp;&emsp;大家好！我叫韩雅妮，是西安电子科技大学的一名研究生。目前主要研究网络安全，深度学习，推荐系统等方面的相关知识。很高兴能够在这个平台上与大家分享一些学习到的内容，如有不足之处，还请各位学者指正批评！
+            
+            </p>
+			
+		</div>
+	</div>
+	<!--- About Us Ends Here ---->
+	<!--- Featured Work Starts Here ---->
+	<div class="feature" id="work">
+		<div class="container">			
+				<h3 class="top-title">Related Work</h3>
+				<div class="portfolio">
+					<ul id="filters" class="clearfix">
+						<li><span class="filter" data-filter="app card icon logo web">Deep Learning</span></li>
+						<li><span class="filter" data-filter="app"> Recommendation System</span></li>
+					</ul>
+				</div>
+				</div>	
+
+<!---Services Starts Here ---->
+    <div class="services" id="service">
+        <div class="container">
+			<h3 class="top-title">Services</h3>
+           
+					<p>
+               <a href = "./ppt/190914-神经网络.pdf">190914-神经网络</a>
+            
+            </p>
+			
+				<!---Services Ends Here ---->
+		</div>
+	</div>
+	<!--- Featured Work Ends Here ---->	
+
+    <div class="publications" id="publications">
+		<div class="container">
+			<h3 class="top-title">Publications</h3>
+			<!---    <p></p>    --->
+			<p>
+               &emsp;&emsp;
+            
+            </p>
+			
+		</div>
+	</div>
+
+
+
+
+
+	<!--- Contact-starts Here --->
+	<div class="contact" id="contact">
+		<div class="contact-top">
+			<h3>Contact</h3>
+			<div class="contact-top-row">
+				<div class="col-md-4 contact-top-column">
+					<address>
+						<p>
+							地址: 西安电子科技大学北校区
+						</p>
+						<p>QQ: 369424948</p>
+						<p>邮箱: 369424948@qq.com</p>
+					</address>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--- Contact-Ends Here --->
+
+</body>
+</html>
